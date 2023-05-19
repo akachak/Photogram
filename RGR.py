@@ -11,10 +11,6 @@ from libs.screens.homePage import HomePage
 from kivy.uix.screenmanager import Screen
 from kivy.uix.screenmanager import ScreenManager
 
-
-
-
-
 class MainApp(MDApp):
     def build(self):
         Window.size=[300,600]
