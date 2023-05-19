@@ -1,22 +1,17 @@
 
-
-
-
 <InForm@Screen>:
     name: 'inform'
     BoxLayout:
         orientation: 'vertical'
         padding: '40 dp'
         BoxLayout:
-            Label:
-                text: 'Login'
             TextInput:
+                id: inLogin
+                size_hint: 1, 0.5
                 multiline: False
-
         BoxLayout:
-            Label:
-                text: 'Password'
             TextInput:
+                size_hint: 1, 0.5
                 multiline: False
       
         BoxLayout:
@@ -25,11 +20,14 @@
             CheckBox:
       
         Button:
+            size_hint: 1, 0.5
             text: 'Войти'
+            on_release:
+                if(root.check()): root.manager.current = 'wtfform'
         Button:
+            size_hint: 1, 0.5
             text: 'Зарегистрироваться'
             on_release: 
-                
                 root.manager.current = 'regform'
 
 <RegForm@Screen>:
@@ -64,12 +62,8 @@
     name: 'wtfform'
     BoxLayout:
         orientation: 'vertical'
-        padding: '40 dp'
         BoxLayout:
-            Label:
-                text: 'Return Password'
-            TextInput:
-                multiline: False
+            DownPanel:
         Button:
             text: 'Goback'
             on_release: 

@@ -20,6 +20,7 @@ class MainApp(MDApp):
     def load_all_kv_files(self):
         Builder.load_file('libs/screens/homePage.kv')
         Builder.load_file('libs/screens/formsManager.kv')
+        Builder.load_file('libs/screens/tabs.kv')
         
 if __name__ == '__main__':
     MainApp().run()
