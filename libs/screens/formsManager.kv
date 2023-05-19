@@ -5,15 +5,25 @@
         orientation: 'vertical'
         padding: '40 dp'
         BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: 'Login'
             TextInput:
                 id: inLogin
                 size_hint: 1, 0.5
                 multiline: False
+                hint_text: 'Enter Login'
         BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text:'Password'
             TextInput:
+                id: InPassword
                 size_hint: 1, 0.5
                 multiline: False
-      
+                hint_text: 'Enter Password'
+                password: True
+
         BoxLayout:
             Label:
                 text: 'Save'
@@ -36,24 +46,29 @@
         orientation: 'vertical'
         padding: '40 dp'
         BoxLayout:
+            orientation: 'vertical'
             Label:
-                text: 'Login'
+                text: 'Login (UserName)'
             TextInput:
+                size_hint: 1, 0.5
                 multiline: False
-
-        BoxLayout:
             Label:
                 text: 'Password'
             TextInput:
+                size_hint: 1, 0.5
                 multiline: False
-        
-        BoxLayout:
             Label:
                 text: 'Return Password'
             TextInput:
+                size_hint: 1, 0.5
                 multiline: False
+            
+
+            
         Button:
+            size_hint: 0.8, 0.2
             text: 'Зарегистрироваться'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
             on_release: 
                 root.manager.current = 'wtfform'
 
