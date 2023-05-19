@@ -1,4 +1,6 @@
 from kivy.uix.tabbedpanel import TabbedPanel
 
 class DownPanel(TabbedPanel):
-    pass
+    def exit(self):
+        return True
+    

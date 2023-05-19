@@ -55,7 +55,6 @@
         Button:
             text: 'Зарегистрироваться'
             on_release: 
-                
                 root.manager.current = 'wtfform'
 
 <WtfForm@Screen>:
@@ -64,9 +63,20 @@
         orientation: 'vertical'
         BoxLayout:
             DownPanel:
-        Button:
-            text: 'Goback'
-            on_release: 
-                
-                root.manager.current = 'inform'
+        BoxLayout:
+            size_hint: 1, 0.1
+            pos_hint: {'center_x': 0.5, 'y': 1}
+            Image:
+                source: 'libs/images/girl_one.png'
+            Image:
+                source: 'libs/images/girl_three.png'
+            Button:
+                text: 'Выйти'
+                on_release: 
+                    root.manager.current = 'inform'
+            Image:
+                source: 'libs/images/girl_two.png'
+            Image:
+                source: 'libs/images/girl_four.png'
+        
 
