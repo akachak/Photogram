@@ -1,0 +1,25 @@
+
+#:import get_color_from_hex  kivy.utils.get_color_from_hex
+
+<HomePage@MDScreen>:
+    md_bg_color: get_color_from_hex("#9900CC")
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        
+        MDBoxLayout:
+            padding: '20dp'
+            adaptive_height: True
+            
+            # MDIconButton:
+            #     icon: 'plus'
+            MDLabel:
+                text: 'Photogram'
+                halign: 'center'
+                valign: 'center'
+                font_size: 20
+        WindowManager:
+            InForm:
+            RegForm:
+            WtfForm:
+

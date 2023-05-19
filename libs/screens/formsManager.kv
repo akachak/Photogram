@@ -1,0 +1,78 @@
+
+
+
+
+<InForm@Screen>:
+    name: 'inform'
+    BoxLayout:
+        orientation: 'vertical'
+        padding: '40 dp'
+        BoxLayout:
+            Label:
+                text: 'Login'
+            TextInput:
+                multiline: False
+
+        BoxLayout:
+            Label:
+                text: 'Password'
+            TextInput:
+                multiline: False
+      
+        BoxLayout:
+            Label:
+                text: 'Save'
+            CheckBox:
+      
+        Button:
+            text: 'Войти'
+        Button:
+            text: 'Зарегистрироваться'
+            on_release: 
+                
+                root.manager.current = 'regform'
+
+<RegForm@Screen>:
+    name: 'regform'
+    BoxLayout:
+        orientation: 'vertical'
+        padding: '40 dp'
+        BoxLayout:
+            Label:
+                text: 'Login'
+            TextInput:
+                multiline: False
+
+        BoxLayout:
+            Label:
+                text: 'Password'
+            TextInput:
+                multiline: False
+        
+        BoxLayout:
+            Label:
+                text: 'Return Password'
+            TextInput:
+                multiline: False
+        Button:
+            text: 'Зарегистрироваться'
+            on_release: 
+                
+                root.manager.current = 'wtfform'
+
+<WtfForm@Screen>:
+    name: 'wtfform'
+    BoxLayout:
+        orientation: 'vertical'
+        padding: '40 dp'
+        BoxLayout:
+            Label:
+                text: 'Return Password'
+            TextInput:
+                multiline: False
+        Button:
+            text: 'Goback'
+            on_release: 
+                
+                root.manager.current = 'inform'
+
