@@ -47,6 +47,27 @@
         #     # center_y: self.parent.center_y
     TabbedPanelItem:
         text: "Я"
+        BoxLayout:
+            orientation: 'vertical'
+            MDScreen:
+
+                MDSwiper:
+                    # size: None
+                    height: root.height  - dp(40)
+                    y: root.height - self.height - dp(20)
+
+                    SwiperOne:
+                        FitImage:
+                            source: 'libs/images/me.jpg'
+                            radius: [20,]
+                    SwiperOne:
+                        FitImage:
+                            source: 'libs/images/me1.jpg'
+                            radius: [20,]
+                    SwiperOne:
+                        FitImage:
+                            source: 'libs/images/me3.jpg'
+                            radius: [20,]
         # Image:
         #     source: 'libs/images/add.png'
         #     # center_x: self.parent.center_x
@@ -78,26 +99,30 @@
         
         # dei_button:dei_button
         BoxLayout:
-            orientation:'vertical'
+            orientation: 'vertical'
             BoxLayout:
                 orientation:'vertical'
-                
-                TextInput:
-                    id: search_input
-                    multiline: False
-                    size_hint: 1, 0.5
-                    hint_text: 'Enter UserName'
-                Button:
-                    id: search_button
-                    size_hint: 1, 0.3
-                    text: 'Найти'
-                    on_release:
-                        root.search()
-            BoxLayout:
-                orientation: 'vertical'
-                Label:
-                    id: user_name
-                    text: 'Пока никого не нашли'
+                BoxLayout:
+                    orientation:'vertical'
+                    
+                    TextInput:
+                        id: search_input
+                        multiline: False
+                        size_hint: 1, 0.5
+                        hint_text: 'Enter UserName'
+                    Button:
+                        id: search_button
+                        size_hint: 1, 0.3
+                        text: 'Найти'
+                        on_release:
+                            root.search()
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        id: user_name
+                        text: 'Пока никого не нашли'
+            Image:
+                source: 'libs/images/search.jpg'
                 # Button:
                 #     id: dei_button
                 #     size_hint: 1, 0.3
