@@ -4,6 +4,7 @@
 
     inLogin: inLogin
     inPassword: inPassword
+    inCheckBox: inCheckBox
     BoxLayout:
         orientation: 'vertical'
         padding: '40 dp'
@@ -31,12 +32,13 @@
             Label:
                 text: 'Save'
             CheckBox:
+                id: inCheckBox
       
         Button:
             size_hint: 1, 0.5
             text: 'Войти'
             on_release:
-                if(root.check()): root.manager.current = 'wtfform'
+                if(root.check(inCheckBox.active)): root.manager.current = 'wtfform'
         Button:
             size_hint: 1, 0.5
             text: 'Зарегистрироваться'
@@ -66,12 +68,14 @@
                 id: regPassword
                 size_hint: 1, 0.5
                 multiline: False
+                password: True
             Label:
                 text: 'Return Password'
             TextInput:
                 id: regRetPassword
                 size_hint: 1, 0.5
                 multiline: False
+                password: True
             
 
             
