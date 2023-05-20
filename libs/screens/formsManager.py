@@ -1,7 +1,7 @@
 from kivy.uix.screenmanager import Screen
 from kivy.uix.screenmanager import ScreenManager
 from libs.screens.tabs import DownPanel
-from libs.components.database import db, sql
+from libs.components.database import *
 
 class InForm(Screen):
     def biba(self):
@@ -23,9 +23,14 @@ class InForm(Screen):
         
         
         flagUser=False
-        for value in sql.execute("SELECT * FROM users"):
-            if(value[0]==log and value[1]==pas):
-                flagUser=True
+        with db:
+            try:
+                ge = User.get(User.login==log)
+                if (ge.password==pas):
+                    flagUser=True
+            except Exception as e:
+                    flagUser = False
+                    print('AAAAA')
         
 
         if(flagUser):
@@ -56,17 +61,27 @@ class RegForm(Screen):
         log= self.regLogin.text
         pas= self.regPassword.text
         flagLogin = False
-        for value in sql.execute("SELECT * FROM users"):
-            if (value[0]==log):
+        with db:
+            try:
+                User.get(User.login==log)
                 flagLogin=True
-
+                print("MAYBE")
+            except Exception as e:
+                flagLogin=False
+                print('piska')
+            
         if(log == '' or pas == ''):
             flagLogin=True
 
         if(not(flagLogin)):
             if(pas==self.regRetPassword.text):
-                sql.execute(f"INSERT INTO users VALUES(?, ?)", (log,pas))
-                db.commit()
+                with db:
+                    newUser = User.create(login=log, password = pas)
+                    
+                fileUser = open('user.txt', 'w+')
+                fileUser.seek(0)
+                fileUser.write(newUser.login)
+                fileUser.close()
                 return True
             else:
                 self.regRetPassword.text=''
