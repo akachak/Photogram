@@ -1,6 +1,9 @@
 
 <InForm@Screen>:
     name: 'inform'
+
+    inLogin: inLogin
+    inPassword: inPassword
     BoxLayout:
         orientation: 'vertical'
         padding: '40 dp'
@@ -18,7 +21,7 @@
             Label:
                 text:'Password'
             TextInput:
-                id: InPassword
+                id: inPassword
                 size_hint: 1, 0.5
                 multiline: False
                 hint_text: 'Enter Password'
@@ -42,6 +45,10 @@
 
 <RegForm@Screen>:
     name: 'regform'
+
+    regLogin: regLogin
+    regPassword: regPassword
+    regRetPassword: regRetPassword
     BoxLayout:
         orientation: 'vertical'
         padding: '40 dp'
@@ -50,16 +57,19 @@
             Label:
                 text: 'Login (UserName)'
             TextInput:
+                id: regLogin
                 size_hint: 1, 0.5
                 multiline: False
             Label:
                 text: 'Password'
             TextInput:
+                id: regPassword
                 size_hint: 1, 0.5
                 multiline: False
             Label:
                 text: 'Return Password'
             TextInput:
+                id: regRetPassword
                 size_hint: 1, 0.5
                 multiline: False
             
@@ -70,7 +80,7 @@
             text: 'Зарегистрироваться'
             pos_hint: {'center_x': 0.5, 'center_y': 0.5}
             on_release: 
-                root.manager.current = 'wtfform'
+                if(root.reg()): root.manager.current = 'wtfform'
 
 <WtfForm@Screen>:
     name: 'wtfform'
