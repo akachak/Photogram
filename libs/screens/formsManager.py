@@ -13,7 +13,7 @@ class InForm(Screen):
             self.inLogin.text = p
             self.inPassword.text = s[1]
         except Exception as e:
-            print('piska')
+            print('gg')
         
         fileSave.close()
     def check(self, value):
@@ -68,7 +68,7 @@ class RegForm(Screen):
                 print("MAYBE")
             except Exception as e:
                 flagLogin=False
-                print('piska')
+                print('p')
             
         if(log == '' or pas == ''):
             flagLogin=True
@@ -77,7 +77,7 @@ class RegForm(Screen):
             if(pas==self.regRetPassword.text):
                 with db:
                     newUser = User.create(login=log, password = pas)
-                    
+
                 fileUser = open('user.txt', 'w+')
                 fileUser.seek(0)
                 fileUser.write(newUser.login)

@@ -2,8 +2,44 @@
     do_default_tab: False
     tab_pos: 'bottom_mid'
     font_size: 0.5, 1
+
+    user_name: user_name
+    search_input: search_input
+    search_button: search_button
+
     TabbedPanelItem:
         text: "Лента"
+        BoxLayout:
+            orientation: 'vertical'
+            MDScreen:
+
+                MDSwiper:
+                    # size: None
+                    height: root.height  - dp(40)
+                    y: root.height - self.height - dp(20)
+
+                    SwiperOne:
+                        FitImage:
+                            source: 'libs/images/1.jpg'
+                            radius: [20,]
+                    SwiperOne:
+                        FitImage:
+                            source: 'libs/images/2.jpg'
+                            radius: [20,]
+                    SwiperOne:
+                        FitImage:
+                            source: 'libs/images/3.jpg'
+                            radius: [20,]
+                    SwiperOne:
+                        FitImage:
+                            source: 'libs/images/4.jpg'
+                            radius: [20,]
+                    SwiperOne:
+                        FitImage:
+                            source: 'libs/images/5.jpg'
+                            radius: [20,]
+
+            
         # background_image: 'libs/images/home.png'
         # Image:
         #     source: 'libs/images/home.png'
@@ -15,14 +51,59 @@
         #     source: 'libs/images/add.png'
         #     # center_x: self.parent.center_x
         #     # center_y: self.parent.center_y
-    TabbedPanelItem:
-        text: "Добавить"
-        # Image:
-        #     source: 'libs/images/search.png'
-        #     # center_x: self.parent.center_x
-        #     # center_y: self.parent.center_y
+    # TabbedPanelItem:
+    #     text: "Добавить"
+    #     add_input: add_input
+    #     add_button: add_button
+    #     BoxLayout:
+    #         orientation:'vertical'
+                
+    #         TextInput:
+    #             id: add_input
+    #             multiline: False
+    #             size_hint: 1, 0.5
+    #             hint_text: 'Введите название изображения'
+    #         Button:
+    #             id: add_button
+    #             size_hint: 1, 0.3
+    #             text: 'Найти'
+    #             on_release:
+    #     # Image:
+    #     #     source: 'libs/images/search.png'
+    #     #     # center_x: self.parent.center_x
+    #     #     # center_y: self.parent.center_y
     TabbedPanelItem:
         text: "Поиск"
+        
+        
+        # dei_button:dei_button
+        BoxLayout:
+            orientation:'vertical'
+            BoxLayout:
+                orientation:'vertical'
+                
+                TextInput:
+                    id: search_input
+                    multiline: False
+                    size_hint: 1, 0.5
+                    hint_text: 'Enter UserName'
+                Button:
+                    id: search_button
+                    size_hint: 1, 0.3
+                    text: 'Найти'
+                    on_release:
+                        root.search()
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    id: user_name
+                    text: 'Пока никого не нашли'
+                # Button:
+                #     id: dei_button
+                #     size_hint: 1, 0.3
+                #     text: 'Пока никого не нашли'
+                #     on_release:
+                #         root.dei()
         # Image:
         #     source: 'libs/images/settings.png'
         #     # center_x: self.parent.center_x

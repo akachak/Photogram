@@ -22,6 +22,7 @@ class MainApp(MDApp):
         Builder.load_file('libs/screens/homePage.kv')
         Builder.load_file('libs/screens/formsManager.kv')
         Builder.load_file('libs/screens/tabs.kv')
+        Builder.load_file('libs/components/swiper.kv')
         
 if __name__ == '__main__':
     MainApp().run()
